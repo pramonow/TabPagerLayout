@@ -2,8 +2,7 @@ package pramonow.com.smoothtablayout
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v4.view.ViewPager
+import com.pramonow.tabpagermodule.TabPagerLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,8 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var layout = findViewById<CombinedTabAndViewPagerLayout>(R.id.tab_pager)
+        var layout = findViewById<TabPagerLayout>(R.id.tab_pager)
         layout.setActivity(this)
+        layout.addTabFragment("Tab 1", SampleFragment())
+        layout.addTabFragment("Tab 2", SampleFragment())
+        layout.addTabFragment("Tab 3", SampleFragment())
 
     }
 }
